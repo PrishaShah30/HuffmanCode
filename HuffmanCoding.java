@@ -5,14 +5,6 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.Collections;
-
-/**
- * This class contains methods which, when used together, perform the
- * entire Huffman Coding encoding and decoding process
- * 
- * @author Ishaan Ivaturi
- * @author Prince Rawal
- */
 public class HuffmanCoding {
     private String fileName;
     private ArrayList<CharFreq> sortedCharFreqList;
@@ -22,7 +14,7 @@ public class HuffmanCoding {
     /**
      * Constructor used by the driver, sets filename
      * DO NOT EDIT
-     * @param f The file we want to encode
+     * The file we want to encode
      */
     public HuffmanCoding(String f) { 
         fileName = f; 
@@ -203,7 +195,7 @@ private boolean binaryStringCreator(CharFreq charFreq, TreeNode treeNode, String
      * Using encodings and filename, this method makes use of the writeBitString method
      * to write the final encoding of 1's and 0's to the encoded file.
      * 
-     * @param encodedFile The file name into which the text file is to be encoded
+     * encodedFile The file name into which the text file is to be encoded
      */
     public void encode(String encodedFile) {
         StdIn.setFile(fileName);
@@ -225,8 +217,8 @@ private boolean binaryStringCreator(CharFreq charFreq, TreeNode treeNode, String
      * and NOT as characters of 1 and 0 which take up 8 bits each
      * DO NOT EDIT
      * 
-     * @param filename The file to write to (doesn't need to exist yet)
-     * @param bitString The string of 1's and 0's to write to the file in bits
+     * filename The file to write to (doesn't need to exist yet)
+     * bitString The string of 1's and 0's to write to the file in bits
      */
     public static void writeBitString(String filename, String bitString) {
         byte[] bytes = new byte[bitString.length() / 8 + 1];
@@ -275,9 +267,8 @@ private boolean binaryStringCreator(CharFreq charFreq, TreeNode treeNode, String
      * Using a given encoded file name, this method makes use of the readBitString method 
      * to convert the file into a bit string, then decodes the bit string using the 
      * tree, and writes it to a decoded file. 
-     * 
-     * @param encodedFile The file which has already been encoded by encode()
-     * @param decodedFile The name of the new file we want to decode into
+     * encodedFile The file which has already been encoded by encode()
+     * decodedFile The name of the new file we want to decode into
      */
     public void decode(String encodedFile, String decodedFile) {
         StdOut.setFile(decodedFile);
@@ -307,8 +298,8 @@ private boolean binaryStringCreator(CharFreq charFreq, TreeNode treeNode, String
      * representing the bits in the file
      * DO NOT EDIT
      * 
-     * @param filename The encoded file to read from
-     * @return String of 1's and 0's representing the bits in the file
+     * filename The encoded file to read from
+     * String of 1's and 0's representing the bits in the file
      */
     public static String readBitString(String filename) {
         String bitString = "";
